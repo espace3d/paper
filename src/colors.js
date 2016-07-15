@@ -1,0 +1,4 @@
+var red=0xff4f4f
+var blue=0x25a7ba
+var black=0x000000
+var white=0xFFFFFF
