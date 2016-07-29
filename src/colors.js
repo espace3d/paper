@@ -1,4 +1,6 @@
 var red=0xff4f4f
 var blue=0x25a7ba
-var black=0x000000
+var black=0x002000
+var grey=0x151515
 var white=0xFFFFFF
+var green=0x3AB7A9
