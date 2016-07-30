@@ -41,8 +41,8 @@ theGame.prototype = {
 			var lowerButton = this.game.add.button(160,380,"lower",this.clickedLower,this);
 			lowerButton.anchor.setTo(0.5,0.5);	
 			background=drawBackground(this.game,backgroundG)
-			paper_player = drawP(this.paper_player,playerBackgroundGroup,this.game,w4*3,0)
-			paper_opponent = drawP(this.paper_opponent,opponentPapers,this.game,w4,0)
+			paper_player = drawP(playerPapers,this.game,w4*3,0)
+			paper_opponent = drawP(opponentPapers,this.game,w4,0)
 			backgroundG.add(lowerButton)
 			backgroundG.add(higherButton)
 			backgroundG.add(spriteNumber)
@@ -53,8 +53,8 @@ theGame.prototype = {
 		},
 
 	update: function(){
-				paper_opponent.fall()	
-				paper_player.fall()	
+				//paper_opponent.fall()	
+				//paper_player.fall()	
 		},
 
 
