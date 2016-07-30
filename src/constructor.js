@@ -1,31 +1,25 @@
-c = function (Group,game,nameA,posx,posy,width,height,anchor,color,alpha) {
+drawSprite = function (Group,game,nameA,posx,posy,width,height,anchor,color,alpha) {
 
-	Phaser.Sprite.call(this,game,posx,posy,nameA)
-	this.x=posx;
-	this.y=posy;
-	this.width=width;
-	this.height=height;
-	this.anchor.set(anchor);
+	var e=game.add.sprite(posx,posy,nameA)
+	e.x=posx;
+	e.y=posy;
+	e.width=width;
+	e.height=height;
+	e.anchor.set(anchor);
 	if (color==0) {
 	} else {
-	this.tint=color
+	e.tint=color
 	}
-	this.alpha=alpha;;
+	e.alpha=alpha;;
 	//laisse la possibilité d'ajouter ou non un groupe
 	if (Group==0) {
 		console.log("pas de groupe")
 	} else {
-	Group.add(this);
+	Group.add(e);
 	}
-	game.add.existing(this);
+	return e
 }
 
-c.prototype = Object.create(Phaser.Sprite.prototype);
-c.prototype.constructor = c;
-
-c.prototype.update = function() {
-//this.angle += 2;
-};
 
 //TRANSITIONS
 //Déplacement du menu permettant de sélectionner les papiers

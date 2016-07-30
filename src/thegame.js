@@ -11,25 +11,27 @@ var theGame = function(game){
 	background = null;
 	menuPaper=null;
 	s=null;
-	timer=null;
+	time=null;
 	text=null;
 	paper_player = null;
 	paper_opponent = null;
 	backgroundG=null;
+	groupnull=null;
 }
 
 theGame.prototype = {
 	create: function(){
 
 		//ordre des groupes ici
+			groupnull = this.game.add.group();
 			backgroundG = this.game.add.group();
 			playerBackgroundGroup = this.game.add.group();
 			opponentBackgroundGroup = this.game.add.group();
 			menuPaperGroup = this.game.add.group();
-			hudGroup = this.game.add.group();
 
 			playerPapers = this.game.add.group();
 			opponentPapers = this.game.add.group();
+			hudGroup = this.game.add.group();
 
 // declaration des variables via les constructor
 			number = Math.floor(Math.random()*10);
@@ -40,21 +42,24 @@ theGame.prototype = {
 			higherButton.anchor.setTo(0.5,0.5);
 			var lowerButton = this.game.add.button(160,380,"lower",this.clickedLower,this);
 			lowerButton.anchor.setTo(0.5,0.5);	
-			background=drawBackground(this.game,backgroundG)
+			groupnull.add(lowerButton)
+			groupnull.add(higherButton)
+			groupnull.add(spriteNumber)
+
+
+			background=drawBackground(this.game,backgroundG,playerBackgroundGroup,opponentBackgroundGroup)
 			paper_player = drawP(playerPapers,this.game,w4*3,0)
 			paper_opponent = drawP(opponentPapers,this.game,w4,0)
-			backgroundG.add(lowerButton)
-			backgroundG.add(higherButton)
-			backgroundG.add(spriteNumber)
-
+displacement_background_opponent(opponentBackgroundGroup,this.game)
+displacement_background_player(playerBackgroundGroup,this.game)
 			//menuPaper=drawMenuPaper(this.menuPaper,menuPaperGroup,this.game)
-			text=drawText(this.text,this.game,hudGroup)
-			time=drawTime(this.timebackground,this.game)
+			time=drawTime(this.game,hudGroup)
+			text=drawText(this.game,hudGroup)
 		},
 
 	update: function(){
-				//paper_opponent.fall()	
-				//paper_player.fall()	
+				paper_opponent.fall()	
+				paper_player.fall()	
 		},
 
 
