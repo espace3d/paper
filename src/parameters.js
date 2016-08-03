@@ -1,11 +1,15 @@
-var w = 320
-var h = 480
-var w2 = w/2
-var h2 = h/2
-var w4 = w/4
-var h4 = h/4
-var number={}
-number.paper=9
+var w = 640;
+var h = 960;
+var w2 = w/2;
+var h2 = h/2;
+var w4 = w/4;
+var h4 = h/4;
+
+var dim={}
+dim.paper=w/6;
+
+var nu={}
+nu.paper="9"
 // var M={}
 // M.W=display.contentWidth
 // M.W2=display.contentWidth*.5
@@ -29,7 +33,7 @@ number.paper=9
 // M.cnt.enemy=0 --to know how many enemy are killed to upgrade level
 
 // M.position={}
-// M.position.textScorey=10
+// M.position.textScorey=10 
 // M.position.endehors=3000
 // M.position.txtplayerx=M.W*.25
 // M.position.txtplayery=M.H*.05

@@ -1,9 +1,20 @@
-<!doctype html>
-<html>
-	<head>
-		<meta charset=utf-8 />
-    		<script src="phaser.min.js"></script>
 
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Phaser Full Screen Mobile Example</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="chrome=1, IE=9">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="HandheldFriendly" content="true" />
+	<meta name="robots" content="noindex,nofollow" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<meta name="apple-mobile-web-app-title" content="Phaser App">
+
+	<link rel="stylesheet" href="css/stylesheet.css" type="text/css" charset="utf-8" />
+    		<script src="phaser.min.js"></script>
     		<script src="src/parameters.js"></script>
     		<script src="src/group.js"></script>
     		<script src="src/constructor.js"></script>
@@ -17,12 +28,15 @@
 		<script src="src/menupaper.js"></script>
 		<script src="src/thegame.js"></script>
 		<script src="src/gameover.js"></script>	
-    		<style>
-    			body{margin:0}
-    		</style>
-		<script>
-			(function() {
-				var game = new Phaser.Game(320,480, Phaser.WEBGL, "game");
+</head>
+<body>
+
+	<div id="game"></div>
+	<div id="orientation"></div>
+
+<script type="text/javascript">
+(function() {
+				var game = new Phaser.Game(640,960, Phaser.AUTO, "game");
 				game.state.add("Boot",boot);
 				game.state.add("Preload",preload);
 				game.state.add("GameTitle",gameTitle);
@@ -30,8 +44,8 @@
 				game.state.add("GameOver",gameOver);
 				game.state.start("Boot");
 			})();    
-		</script>
-    </head>
-    <body>
-    </body>
+</script>
+
+</body>
 </html>
+

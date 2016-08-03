@@ -13,13 +13,19 @@ drawSprite = function (Group,game,nameA,posx,posy,width,height,anchor,color,alph
 	e.alpha=alpha;;
 	//laisse la possibilité d'ajouter ou non un groupe
 	if (Group==0) {
-		console.log("pas de groupe")
 	} else {
 	Group.add(e);
 	}
 	return e
 }
 
+//functions utiles
+function pseudoAnchorX(obj) {
+obj.position.x=obj.position.x-obj.width/2
+}	
+function pseudoAnchorY(obj) {
+obj.position.y=obj.position.y-obj.height/2
+}
 
 //TRANSITIONS
 //Déplacement du menu permettant de sélectionner les papiers

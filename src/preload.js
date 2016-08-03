@@ -11,9 +11,11 @@ preload.prototype = {
 		this.game.load.image("higher","assets/higher.png");
 		this.game.load.image("lower","assets/lower.png");
 		this.game.load.image("gameover","assets/gameover.png");
-		this.game.load.image("timer","assets/timer.png");
-		//peut peut être supprime
-		this.game.load.image("motif","assets/motif.png");
+		this.game.load.bitmapFont('lucky_black','assets/font_black.png', 'assets/font_black.fnt');
+		this.game.load.bitmapFont('lucky','assets/font.png', 'assets/font.fnt');
+		this.game.load.image("timer","assets/timer.svg");
+
+		this.game.load.image("back","assets/back.svg");
 		this.game.load.image("division","assets/division.png");
 		this.game.load.image("paper","assets/paper.png");
 		this.game.load.image("stripe","assets/stripe.png");

@@ -31,6 +31,7 @@ theGame.prototype = {
 
 			playerPapers = this.game.add.group();
 			opponentPapers = this.game.add.group();
+			playersGroup = this.game.add.group();
 			hudGroup = this.game.add.group();
 
 // declaration des variables via les constructor
@@ -43,17 +44,23 @@ theGame.prototype = {
 			var lowerButton = this.game.add.button(160,380,"lower",this.clickedLower,this);
 			lowerButton.anchor.setTo(0.5,0.5);	
 			groupnull.add(lowerButton)
+
+
 			groupnull.add(higherButton)
 			groupnull.add(spriteNumber)
 
 
-			background=drawBackground(this.game,backgroundG,playerBackgroundGroup,opponentBackgroundGroup)
-			paper_player = drawP(playerPapers,this.game,w4*3,0)
-			paper_opponent = drawP(opponentPapers,this.game,w4,0)
-displacement_background_opponent(opponentBackgroundGroup,this.game)
-displacement_background_player(playerBackgroundGroup,this.game)
+			background=drawBackground(this.game,backgroundG,playerBackgroundGroup,opponentBackgroundGroup,playersGroup)
+			paper_player = drawP(playerPapers,this.game,w4*3,-h)
+			paper_opponent = drawP(opponentPapers,this.game,w4,-h)
+
+
+//deplacement des background
+displacement_background_opponent_and_player(opponentBackgroundGroup,playerBackgroundGroup,this.game)
+displacement_background_shadow(background.table_opponent,background.table_player,playersGroup,this.game)
+
+//menu paper mis en attente doit modifier le constructor
 			//menuPaper=drawMenuPaper(this.menuPaper,menuPaperGroup,this.game)
-			time=drawTime(this.game,hudGroup)
 			text=drawText(this.game,hudGroup)
 		},
 
