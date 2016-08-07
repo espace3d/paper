@@ -1,3 +1,5 @@
+//////////////////////////////////////////////////////////////////////////////////////////
+//position
 var w = 640;
 var h = 960;
 var w2 = w/2;
@@ -5,9 +7,13 @@ var h2 = h/2;
 var w4 = w/4;
 var h4 = h/4;
 
+//////////////////////////////////////////////////////////////////////////////////////////
+//dimensions
 var dim={}
 dim.paper=w/6;
 
+//////////////////////////////////////////////////////////////////////////////////////////
+//number
 var nu={}
 nu.paper="9"
 // var M={}
@@ -18,6 +24,7 @@ nu.paper="9"
 // M.nameplayer = "jojo"
 // M.levelplayer = "1"
 
+//////////////////////////////////////////////////////////////////////////////////////////
 //temps pour le déplacement de l'ombre de la table qui va vers le bas
 var time_shadow_delay=500
 var time_shadow_deplacement=400
@@ -25,7 +32,6 @@ var time_shadow_deplacement=400
 var time_shadow_delay2=7000
 var time_shadow_deplacement2=400
 
-///////////////////////////////////////////////////////////////////////
 
 //temps pour le déplacement des panneaux du background qui s'ouvre vers l'extérieur
 var time_back_delay=4000
@@ -34,11 +40,10 @@ var time_back_deplacement=300
 var time_back_delay2=1700
 var time_back_deplacement2=900
 
+//temps pour le déplacement des textes de l'opponent et du player
+var time_text_delay=time_shadow_delay2
+var time_text_deplacement=900
 
-var time_text_delay=time_back_delay+time_back_deplacement+time_back_delay2
-var time_text_deplacement=time_back_deplacement2
-
-///////////////////////////////////////////////////////////////////////
 
 // M.number={}
 // M.number.level=10 --!!! doit toujours etre pair
