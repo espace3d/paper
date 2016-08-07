@@ -17,6 +17,17 @@ var theGame = function(game){
 	paper_opponent = null;
 	backgroundG=null;
 	groupnull=null;
+	
+	//group
+			playerPapers = null; 
+			playerBackgroundGroup =null; 
+			opponentBackgroundGroup = null; 
+			opponentPapers = null; 
+			menuPaperGroup = null; 
+			playersGroup=null;
+			opponentTextGroup=null;
+			hudGroup=null;
+			//////////////////////////////
 }
 
 theGame.prototype = {
@@ -31,6 +42,7 @@ theGame.prototype = {
 
 			playerPapers = this.game.add.group();
 			opponentPapers = this.game.add.group();
+			opponentTextGroup = this.game.add.group();
 			playersGroup = this.game.add.group();
 			hudGroup = this.game.add.group();
 
@@ -50,14 +62,17 @@ theGame.prototype = {
 			groupnull.add(spriteNumber)
 
 
-			background=drawBackground(this.game,backgroundG,playerBackgroundGroup,opponentBackgroundGroup,playersGroup)
+			background=drawBackground(this.game,backgroundG,playerBackgroundGroup,opponentBackgroundGroup,opponentTextGroup,playersGroup)
 			paper_player = drawP(playerPapers,this.game,w4*3,-h)
 			paper_opponent = drawP(opponentPapers,this.game,w4,-h)
+
+			
 
 
 //deplacement des background
 displacement_background_opponent_and_player(opponentBackgroundGroup,playerBackgroundGroup,this.game)
-displacement_background_shadow(background.table_opponent,background.table_player,playersGroup,this.game)
+displacement_text(opponentTextGroup,playersGroup,this.game)
+displacement_background_shadow(background.table_opponent,background.table_player,playersGroup,opponentTextGroup,this.game)
 
 //menu paper mis en attente doit modifier le constructor
 			//menuPaper=drawMenuPaper(this.menuPaper,menuPaperGroup,this.game)
@@ -65,6 +80,8 @@ displacement_background_shadow(background.table_opponent,background.table_player
 		},
 
 	update: function(){
+//timer 
+time_elapsed(this.game)
 				paper_opponent.fall()	
 				paper_player.fall()	
 		},
