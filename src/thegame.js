@@ -15,30 +15,36 @@ var theGame = function(game){
 	text=null;
 	paper_player = null;
 	paper_opponent = null;
-	backgroundG=null;
+	fondBelowMenu=null;
 	groupnull=null;
 	
-	//group
-			playerPapers = null; 
-			playerBackgroundGroup =null; 
-			opponentBackgroundGroup = null; 
-			opponentPapers = null; 
-			menuPaperGroup = null; 
-			playersGroup=null;
-			opponentTextGroup=null;
-			hudGroup=null;
-			//////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////
+//GROUP
+			groupnull = null
+			fondBelowMenu = null
+			menuPaperGroup = null
+			playerBackgroundGroup = null
+			opponentBackgroundGroup = null
+			playerPapers = null
+			opponentPapers = null
+			opponentTextGroup = null
+			playersGroup = null
+			hudGroup = null
+
+//////////////////////////////////////////////////////////////////////////////////////////
 }
 
 theGame.prototype = {
 	create: function(){
 
 		//ordre des groupes ici
+		//group null sert pour cacher les éléments du canevas original
+
 			groupnull = this.game.add.group();
-			backgroundG = this.game.add.group();
+			fondBelowMenu = this.game.add.group();
+			menuPaperGroup = this.game.add.group();
 			playerBackgroundGroup = this.game.add.group();
 			opponentBackgroundGroup = this.game.add.group();
-			menuPaperGroup = this.game.add.group();
 
 			playerPapers = this.game.add.group();
 			opponentPapers = this.game.add.group();
@@ -62,7 +68,7 @@ theGame.prototype = {
 			groupnull.add(spriteNumber)
 
 
-			background=drawBackground(this.game,backgroundG,playerBackgroundGroup,opponentBackgroundGroup,opponentTextGroup,playersGroup)
+			background=drawBackground(this.game,fondBelowMenu,playerBackgroundGroup,opponentBackgroundGroup,opponentTextGroup,playersGroup)
 			paper_player = drawP(playerPapers,this.game,w4*3,-h)
 			paper_opponent = drawP(opponentPapers,this.game,w4,-h)
 
@@ -74,8 +80,7 @@ displacement_background_opponent_and_player(opponentBackgroundGroup,playerBackgr
 displacement_text(opponentTextGroup,playersGroup,this.game)
 displacement_background_shadow(background.table_opponent,background.table_player,playersGroup,opponentTextGroup,this.game)
 
-//menu paper mis en attente doit modifier le constructor
-			//menuPaper=drawMenuPaper(this.menuPaper,menuPaperGroup,this.game)
+			menuPaper=drawMenuPaper(this.menuPaper,menuPaperGroup,this.game)
 			text=drawText(this.game,hudGroup)
 		},
 
